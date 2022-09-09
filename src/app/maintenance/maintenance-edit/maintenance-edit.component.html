@@ -1,0 +1,41 @@
+<div class="container">
+    <br />
+    <div class="row">
+        <div class="col">
+            <h3>Maintenance Stauts</h3>
+        </div>
+    </div>
+    <br />
+    <form>
+        <div class="form-group">
+            <label for="student.name">Id:</label>
+            <input type="text" class="form-control" [(ngModel)]="maintenance.studId" name="studId" value="studId"
+                placeholder="Name..." [disabled]="maintenance.studId"/>
+            <span></span>
+        </div>
+        <div class="form-group">
+            <label for="maintnance.description">Description:</label>
+            <input type="text" class="form-control" [(ngModel)]="maintenance.description" name="description" value="description"
+                placeholder="Name..." [disabled]="maintenance.description"/>
+            <span></span>
+        </div>
+        <div class="form-group">
+            <label for="maintenance.maintenanceDate">Issue Date :</label>
+            <input type="text" class="form-control" required [(ngModel)]="maintenance.maintenanceDate" name="maintenanceDate"
+                value="maintenanceDate" placeholder="maintenanceDate.." [disabled]="maintenance.maintenanceDate"/>
+        </div>
+        <div class="form-group">
+            <label for="courseId">Status</label>
+            <select [(ngModel)]="maintenance.statusId"name="statusId" class="form-control">
+                <option value="">- Select -</option>
+                <option *ngFor="let c of type" [ngValue]="c.statusId">
+                    {{c.name}}
+                </option>
+            </select>
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="submit(maintenance)">Update</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,39 @@
+<div class="card">
+    <br />
+    <div class="card=header">
+        <h3>Welcome {{student.name}} to your dashboard</h3>
+    </div>
+
+
+    <br />
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h4>{{ student.name }}</h4>
+                </div>
+                <!-- <div class="col text-right">
+                    <a href="#" routerLink="/players/list" class="btn btn-secondary btn-sm">Back To Players List</a>
+                </div>             -->
+            </div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Id:</b> {{ student.id }}</li>
+            <li class="list-group-item"><b>Course:</b> {{course.courseName }}</li>
+            <li class="list-group-item"><b>Room:</b> {{ room.roomNum}}</li>
+            <li class="list-group-item"><b>Gender:</b> {{ gender.genderType}}</li>
+            <li class="list-group-item"><b>Date Of Birth:</b> {{ student.birthDate}}</li>
+            <li class="list-group-item"><b>Age:</b> {{ student.age }}</li>
+        </ul>
+
+       
+    </div>
+    <div class="card-body">
+    
+        <div class="wizard">
+            <button class="btn btn-outline-secondary"><a [routerLink]="['Maintenance/create']">Create Maintenance</a></button>
+            <button class="btn btn-outline-secondary"><a [routerLink]="['Cleaning-Service/create']">Request Cleaning</a></button>               
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

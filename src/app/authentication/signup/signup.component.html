@@ -1,0 +1,50 @@
+<div>
+    <title>
+        Sign Up
+    </title>
+    <div class="wrapper">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+            <label>Email</label><br>
+            <input formControlName="email" placeholder="Email">
+            <div *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">Please
+                provide valid email</div>
+        </div>
+    <div class="form-group">
+            <label>Name</label><br>
+            <input formControlName="name" placeholder="Name">
+            <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)">Name is
+                required</div>
+        </div>
+    <div class="form-group">
+            <label>Last Name</label><br>      
+            <input formControlName="lastName" placeholder="lastName">
+            <div *ngIf="form.get('lastName')?.invalid && (form.get('lastName')?.dirty || form.get('lastName')?.touched)">
+                Last Name is required</div>
+            </div>
+    <div class="form-group">
+            <label>Username</label><br>
+            <input formControlName="username" placeholder="UserName">
+            <div *ngIf="form.get('username')?.invalid && (form.get('username')?.dirty || form.get('username')?.touched)">
+                UserName is required</div>
+        </div>
+    <div class="form-group">
+            <label>Phone Number</label><br>
+            <input formControlName="phoneNumber" placeholder="Phone">
+            <div
+                *ngIf="form.get('phoneNumber')?.invalid && (form.get('phoneNumber')?.dirty || form.get('phoneNumber')?.touched)">
+                Phone Number is required</div>
+        </div>
+        <div>
+            <label>Password</label><br>
+            <input formControlName="password" placeholder="Password" type="password">
+        </div>
+        <div>
+            <label>Confirm Password</label><br>
+            <input formControlName="confirmPassword" placeholder="Password" type="password">
+        </div>
+        <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Sign Up</button>
+    </form>
+    </div>
+</div>
+

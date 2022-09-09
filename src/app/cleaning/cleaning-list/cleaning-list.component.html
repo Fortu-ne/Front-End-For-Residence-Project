@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Cleaning List</h1>
+    <button type="button" class="btn btn-outline-secondary"(click)="exportPDF()">Cleaning Pdf</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="exportExcel()">Cleaning Excel</button>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Student</th>
+            <th>Cleaning Type</th>
+            <th>Service Date</th>
+        </tr>
+        <tr *ngFor="let c of cleaningList">
+            <td>{{c.cleaningId}}</td>
+            <td>{{c.description}}</td>
+            <td>{{studentMap.get(c.studId)}}</td>
+            <td><a [routerLink]="['/Student/dashboard/', c.studId]">
+                    <fa-icon [icon]="faUser">{{studentMap.get(c.studId)}}</fa-icon>
+                </a></td>
+            <td>{{cleaningMap.get(c.cleaningId)}}</td>
+            <td>{{c.serviceDate}}</td>
+            <td><a href="#" [routerLink]="['../edit/',c.cleaningId]">
+                    <fa-icon style="color:blue ;" [icon]="faPenToSquare"></fa-icon>
+                </a></td>
+                          <td>
+                <button type="button" (click)="deleteCleaning(c.cleaningId)">
+                    <fa-icon style="color:red ;" [icon]="faTrash"></fa-icon>
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+

@@ -1,0 +1,22 @@
+<h1>Create Cleaning Request</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="form-group">
+            <label for="typeId">Types of Cleaning Services:</label>
+            <select formControlName="typeId" id="typeId" class="form-control">
+                <option value="">--Select--</option>
+                <option *ngFor="let c of type" value="{{c.cleaningTypeId}}">{{c.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Additional Information:</label>
+            <input formControlName="description" id="description" type="text" class="form-control"
+                placeholder="Description..." />
+        </div>
+    </div>
+    <button class="btn btn-outline-secondary" style="width:80px">
+        <i class="fa fa-chevron-left"></i>Create</button>
+
+
+</form>

@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Student List</h1>
+        <button type="button" class="btn btn-outline-secondary" (click)="exportPDF()">Maintenance Pdf</button>
+        <button type="button" class="btn btn-outline-secondary" (click)="studentExcel()">Maintenance Excel</button>
+    
+    <!-- <a href="#" routerLink="/Maintenance/user"><fa-icon style="color:blue ;" [icon]="faArrowLeft"></fa-icon></a>  -->
+    <table class="table table-striped">
+        <tr>
+            <th>UserName<th>
+            <th>Name</th>
+            <th>last name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Room</th>
+            <th>BirthDate</th>
+        </tr>
+        <tr *ngFor="let stud of student">
+            <td>{{stud.userName}}</td>     
+            <td>{{stud.name}}</td>         
+            <td>{{stud.lastName}}</td>
+            <td>{{stud.age}}</td>
+            <td>{{genderListMap.get(stud.genderId)}}</td>
+            <td>{{courseListMap.get(stud.courseId)}}</td>
+            <td>{{roomTypesMap.get(stud.roomId)}}</td>
+            <td>{{stud.birthDate}}</td>
+            <td><a [routerLink]="['/Student/dashboard/', stud.id]">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                </a></td>
+            <td>
+                <a href="#" [routerLink]="['../edit/',stud.id]" ><fa-icon style="color:blue ;"   [icon]="faPenToSquare"></fa-icon></a>
+            </td>
+            <td>
+                <button type="button" (click)="deleteStudent(stud.id)">
+                    <fa-icon style="color:red ;" [icon]="faTrash"></fa-icon>
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

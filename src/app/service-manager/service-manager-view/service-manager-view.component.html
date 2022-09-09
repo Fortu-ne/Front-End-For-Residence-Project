@@ -1,0 +1,35 @@
+<div class="card">
+    <br />
+    <div class="card=header">
+        <h3>Welcome {{manager.name}} to your dashboard</h3>
+    </div>
+
+
+    <br />
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h4>{{ manager.userName }}</h4>
+                </div>
+            </div>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Id:</b> {{ manager.managerId }}</li>
+            <li class="list-group-item"><b>Name:</b> {{manager.name }}</li>
+            <li class="list-group-item"><b>UserName:</b> {{ manager.userName}}</li>
+            <li class="list-group-item"><b>Last Name:</b> {{manager.lastName}}</li>
+            <li class="list-group-item"><b>Phone Number</b> {{ manager.phoneNumber }}</li>
+        </ul>
+
+            
+
+            <div class="card-body">
+            
+                <div class="wizard">
+                    <a routerLink="/Maintenance/list"><button class="btn btn-outline-secondary">Maintenance List</button></a>
+                    <a [routerLink]="['/Cleaning-Service/list']"><button class="btn btn-outline-secondary">Cleaning List</button></a>
+                </div>
+            </div>
+
+</div>

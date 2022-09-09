@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Maintenance List</h1>
+    <button type="button"  class="btn btn-outline-secondary"(click)="exportPDF()">Maintenance Pdf</button>
+    <button type="button" class="btn btn-outline-secondary"(click)="exportExcel()">Maintenance Excel</button>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Student</th>
+            <th>Maintenance Issues</th>
+            <th>Maintenace Date</th>
+        </tr>
+        <tr *ngFor="let c of maintenaceList">
+            <td>{{c.maintenanceId}}</td>
+            <td>{{c.description}}</td>
+            <td>{{statusMap.get(c.statusId)}}</td>
+            
+            <td><a [routerLink]="['/Student/dashboard/', c.studId]"><fa-icon [icon]="faUser">{{studentMap.get(c.studId)}}</fa-icon></a></td>
+            <td>{{maintenanceTypeMap.get(c.maintenanceTypeId)}}</td>
+            <td>{{c.maintenanceDate}}</td>
+            <td><a href="#" [routerLink]="['../edit/',c.maintenanceId]">
+                <fa-icon style="color:blue ;" [icon]="faPenToSquare"></fa-icon>
+            </a></td>
+            <td>
+                <button type="button" (click)="deleteMaintenance(c.maintenanceId)">
+                    <fa-icon style="color:red ;" [icon]="faTrash"></fa-icon>
+                </button>
+            </td>
+          
+        </tr>
+    </table>
+</div>

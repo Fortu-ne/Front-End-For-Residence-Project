@@ -1,0 +1,12 @@
+.form-container{
+
+    /* text-align: center; */
+    width: 50%;
+    margin: auto;
+}
+.input-label{
+    text-align: left;
+}
+.btn{
+    text-align: center;
+}

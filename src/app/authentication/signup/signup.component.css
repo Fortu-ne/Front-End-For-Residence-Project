@@ -1,0 +1,9 @@
+.wrapper {
+    /* text-align: center; */
+    width: 50%;
+    margin: auto;
+}
+
+.input-label {
+    text-align: left;
+}

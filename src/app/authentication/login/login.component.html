@@ -1,0 +1,87 @@
+<!-- 
+  <div class="container">
+    <br />
+    <div class="row">
+      <div class="col">
+        <h3> Login In Page</h3>
+      </div>
+    </div>
+    <br />
+    <form>
+      <div>
+        <label>Email</label>
+        <input [(ngModel)]="user.email" placeholder="Email" />
+        <span></span>
+      </div>
+      <div>
+      <label>Password</label>
+      <input [(ngModel)]="user.password" placeholder="Password" type="password">
+      </div>
+      
+      <div>
+        <button (click)="onSubmit(user)">Login In</button>
+      </div>
+
+      <div>
+        <a [routerLink]="['/Account/forgot-password']">Forgot Password?</a>
+      </div>
+      <div>
+        <a [routerLink]="['/Student/sign-up']">Don't?, have an account sign up</a>
+      </div>
+  
+    </form>
+  </div> -->
+
+
+  <!-- <div class="form-container">
+    <div class="container">
+      <div class="input-box">
+        <label>Email</label>
+        <input [(ngModel)]="user.email" placeholder="Email">
+      </div>
+      <div class="input-box">
+        <label>Password</label>
+        <input [(ngModel)]="user.password" placeholder="Password" type="password" />
+      </div>
+    </div>
+    <button type="button" (click)="onSubmit(user)">Login In</button>
+      <div>
+        <a [routerLink]="['/Account/forgot-password']">Forgot Password?</a>
+      </div>
+      <div>
+        <a [routerLink]="['/Student/sign-up']">Don't?, have an account sign up</a>
+      </div>
+  </div> -->
+
+
+  <!-- <h1 style="text-align: center;">Login In</h1> -->
+  
+<div class="form-container">
+    <div class="container">
+      <h1>Log In</h1>
+       <div class="form-group">
+          <div class="input-label">
+            <label>Email :</label>
+          </div>
+          <input [(ngModel)]="user.email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <div class="input-label">
+              <label>Email :</label>
+            </div>
+            <input [(ngModel)]="user.password" placeholder="Password" type="password" />
+          </div>
+          <br><button type="button" class="btn btn-outline-secondary" (click)="onSubmit(user)">Login In</button>
+          <div>
+            <a [routerLink]="['/Account/forgot-password']">Forgot Password?</a>
+          </div>
+          <div>
+            <a [routerLink]="['/Student/sign-up']">Don't?, have an account sign up</a>
+          </div>    
+    </div>
+</div>
+
+     
+
+
+ 
